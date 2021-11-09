@@ -1,23 +1,114 @@
-import logo from './logo.svg';
-import './App.css';
+import ExpenseItem from "./components/ExpenseItem";
 
 function App() {
+  const expenses = [
+    {
+      id: 0,
+      date: "Tue Nov 09 2021 17:57:30 GMT+0300 (GMT+03:00)",
+      title: "RENOVIZE",
+      amount: 6860,
+    },
+    {
+      id: 1,
+      date: "Tue Nov 09 2021 17:57:30 GMT+0300 (GMT+03:00)",
+      title: "EXERTA",
+      amount: 985,
+    },
+    {
+      id: 2,
+      date: "Tue Nov 09 2021 17:57:30 GMT+0300 (GMT+03:00)",
+      title: "GRAINSPOT",
+      amount: 4522,
+    },
+    {
+      id: 3,
+      date: "Tue Nov 09 2021 17:57:30 GMT+0300 (GMT+03:00)",
+      title: "ANARCO",
+      amount: 3966,
+    },
+    {
+      id: 4,
+      date: "Tue Nov 09 2021 17:57:30 GMT+0300 (GMT+03:00)",
+      title: "DIGITALUS",
+      amount: 9723,
+    },
+    {
+      id: 5,
+      date: "Tue Nov 09 2021 17:57:30 GMT+0300 (GMT+03:00)",
+      title: "EGYPTO",
+      amount: 7613,
+    },
+    {
+      id: 6,
+      date: "Tue Nov 09 2021 17:57:30 GMT+0300 (GMT+03:00)",
+      title: "UTARA",
+      amount: 1339,
+    },
+    {
+      id: 7,
+      date: "Tue Nov 09 2021 17:57:30 GMT+0300 (GMT+03:00)",
+      title: "ECSTASIA",
+      amount: 4669,
+    },
+    {
+      id: 8,
+      date: "Tue Nov 09 2021 17:57:30 GMT+0300 (GMT+03:00)",
+      title: "PHOLIO",
+      amount: 7634,
+    },
+    {
+      id: 9,
+      date: "Tue Nov 09 2021 17:57:30 GMT+0300 (GMT+03:00)",
+      title: "UBERLUX",
+      amount: 9495,
+    },
+    {
+      id: 10,
+      date: "Tue Nov 09 2021 17:57:30 GMT+0300 (GMT+03:00)",
+      title: "SPHERIX",
+      amount: 4609,
+    },
+    {
+      id: 11,
+      date: "Tue Nov 09 2021 17:57:30 GMT+0300 (GMT+03:00)",
+      title: "JUNIPOOR",
+      amount: 6939,
+    },
+    {
+      id: 12,
+      date: "Tue Nov 09 2021 17:57:30 GMT+0300 (GMT+03:00)",
+      title: "PHARMACON",
+      amount: 3464,
+    },
+    {
+      id: 13,
+      date: "Tue Nov 09 2021 17:57:30 GMT+0300 (GMT+03:00)",
+      title: "IMAGEFLOW",
+      amount: 7086,
+    },
+    {
+      id: 14,
+      date: "Tue Nov 09 2021 17:57:30 GMT+0300 (GMT+03:00)",
+      title: "COMTEXT",
+      amount: 4230,
+    },
+    {
+      id: 15,
+      date: "Tue Nov 09 2021 17:57:30 GMT+0300 (GMT+03:00)",
+      title: "KAGGLE",
+      amount: 4578,
+    },
+    {
+      id: 16,
+      date: "Tue Nov 09 2021 17:57:30 GMT+0300 (GMT+03:00)",
+      title: "LETPRO",
+      amount: 5078,
+    },
+  ];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          New App
-        </a>
-      </header>
+    <div>
+      <ExpenseItem></ExpenseItem>
     </div>
   );
 }
