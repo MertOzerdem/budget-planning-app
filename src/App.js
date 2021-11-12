@@ -1,8 +1,9 @@
+import { useState } from "react";
 import ExpenseItem from "./components/ExpenseItem";
 import NewExpense from "./components/NewExpense/NewExpense";
 
 function App() {
-	const expenses = [
+	const [expenses, setExpenses] = useState([
 		{
 			id: 0,
 			date: "Tue Nov 09 2021 17:57:30 GMT+0300 (GMT+03:00)",
@@ -104,13 +105,25 @@ function App() {
 			date: "Tue Nov 09 2021 17:57:30 GMT+0300 (GMT+03:00)",
 			title: "LETPRO",
 			amount: 5078,
-		},
-	];
+		}
+	]);
+
+	const NewExpenseDataHandler = (data) => {
+		const newExpense = {
+			...data,
+			id: expenses.length
+		};
+		
+		setExpenses((prevExpenses) => {
+			// prevExpenses.push(newExpense)
+			return [newExpense, ...prevExpenses];
+		});
+	}
 
 	return (
 		<div>
-			<NewExpense/>
-			{expenses.map((expense) => {
+			<NewExpense onExpenseFormSubmit={NewExpenseDataHandler}/>
+			{expenses.length === 0 ? <p>No expenses can be found sry :(</p> : expenses.map((expense) => {
 				return (
 					<ExpenseItem
 						key={expense.id}
