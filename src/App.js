@@ -2,6 +2,7 @@ import { useState } from "react";
 import ExpenseItem from "./components/ExpenseItem";
 import NewExpense from "./components/NewExpense/NewExpense";
 import { EmptyWrapper } from "./components/Helper/Wrapper";
+import Modal from './components/Modal/Modal';
 
 function App() {
 	const [expenses, setExpenses] = useState([
@@ -123,6 +124,7 @@ function App() {
 
 	return (
 		<EmptyWrapper>
+			<Modal className="yes" onClose={() => console.log('yes')} show={true} title="modal title"></Modal>
 			<NewExpense onExpenseFormSubmit={NewExpenseDataHandler}/>
 			{expenses.length === 0 ? <p>No expenses can be found sry :(</p> : expenses.map((expense) => {
 				return (
